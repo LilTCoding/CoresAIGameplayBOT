@@ -1,29 +1,19 @@
 import pydirectinput
 import time
-import random
 
 class InputController:
     def __init__(self):
-        pydirectinput.FAILSAFE = False
-        self.key_map = {
-            "W": "w", "A": "a", "S": "s", "D": "d",
-            "Shift": "shift", "Space": "space",
-            "LClick": "left", "RClick": "right",
-            "Inventory": "tab", "Special": "e",
-            "Escape": "esc", "Enter": "enter"
-        }
+        pydirectinput.PAUSE = 0.1
+        pydirectinput.FAILSAFE = True
 
     def press_key(self, key):
-        duration = random.uniform(0.05, 0.15)
-        pydirectinput.keyDown(self.key_map[key])
-        time.sleep(duration)
-        pydirectinput.keyUp(self.key_map[key])
+        pydirectinput.press(key.lower())
 
     def click(self, button):
         if button == "LClick":
-            pydirectinput.click()
+            pydirectinput.click(button='left')
         elif button == "RClick":
-            pydirectinput.rightClick()
+            pydirectinput.click(button='right')
 
     def move_mouse(self, dx, dy):
         pydirectinput.moveRel(dx, dy, relative=True)
