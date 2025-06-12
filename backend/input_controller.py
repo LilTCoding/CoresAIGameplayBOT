@@ -3,7 +3,7 @@ import time
 import random
 
 class InputController:
-    def init(self):
+    def __init__(self):
         pydirectinput.FAILSAFE = False
         self.key_map = {
             "W": "w", "A": "a", "S": "s", "D": "d",
