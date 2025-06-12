@@ -1,17 +1,23 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Frontend for CoresModTrainer",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server dist",
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
+  "dependencies": {
+    "socket.io-client": "^4.7.2"
+  },
   "devDependencies": {
     "http-server": "^14.1.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "@types/socket.io-client": "^3.0.0"
   }
 }
